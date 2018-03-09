@@ -1,17 +1,34 @@
 package com.example.form.Entities;
 
+
+import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 @Entity
 public class Product {
 	@Id
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	private String name;
 	private String Category;
 	private String Brand;
 	private double HighPrice;
 	private double LowPrice;
 	private String Type;
-
+	@ManyToOne 
+	@JoinColumn(name= "Brand_name")
+	private Brand brand;
+	
+	
+	@OneToMany (mappedBy ="product" )
+	Set <Store_Product> products;	
+	
+	
 	public Product()
 	{
 		

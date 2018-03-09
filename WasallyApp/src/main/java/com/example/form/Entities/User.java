@@ -1,15 +1,25 @@
 package com.example.form.Entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.OneToMany;
 
 
 @Entity
 public class User {
 	@Id
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	private String name ;
 	private String Password ;
 	private String Type ;
+	@OneToMany(mappedBy="user",cascade= CascadeType.ALL)
+	private Set<Store>stores;
 	
 	public User() {
 		super();
