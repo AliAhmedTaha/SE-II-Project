@@ -1,0 +1,171 @@
+
+.myButton {
+	background-image: url(btn.jpg);
+	background-size: cover;
+	border-radius:5px;
+	border:none;
+	cursor:pointer;
+	color:#fff;
+	font-size:34px;
+	font-weight: bold;
+	padding:12px 30px;
+	width: 360px;
+	margin-left: 20px;
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.6);
+	outline: none;
+	padding: 10px;
+	font-size: 22px;
+	font-family: cursive;
+}
+.myButton:hover {
+	opacity: 0.8;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+.body { 
+	background-image:url(/images/wall.jpg);
+	width: 100%;
+	height:100%;
+	font-family: cursive;
+	background-size: cover;
+	}
+
+.signup { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 40%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:420px;
+	border-radius: 20px;
+}
+.login { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 50%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:290px;
+	border-radius: 20px;
+}
+.AddProductAdmin { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 35%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:490px;
+	border-radius: 20px;
+}
+
+.AddStore { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 35%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:490px;
+	border-radius: 20px;
+}
+
+.AdminOptions { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 40%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:250px;
+	border-radius: 20px;
+}
+
+.storeOwnerOptions { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 50%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:260px;
+	border-radius: 25px;
+}
+
+
+.AddNewBrand { 
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	top: 40%;
+	left: 50%;
+	margin: -170px 0 0 -200px;
+	width:400px;
+	height:230px;
+	border-radius: 20px;
+}
+
+.h1 {color: #fff; text-align:center; margin: 10px;}
+
+.input { 
+	width: 340px; 
+	margin-left: 20px;
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.6);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 22px;
+	font-family: cursive;
+	border-radius: 3px;
+	color: #fff;
+}
+.select { 
+	width: 360px; 
+	margin-left: 20px;
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.6);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 22px;
+	font-family: cursive;
+	border-radius: 5px;
+	color: #fff;
+}
+.a { 
+	font-size: 16px;
+	color: #fff;
+	margin-left: 20px;
+}
+.a:hover { 
+	font-size: 17px;
+}
+
+table{
+	align-self: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
+table, th, td {
+    border: 1px solid sienna;
+	border-collapse: collapse;
+	text-decoration-color: wheat;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    background-color: brown;
+    color: white;
+}
+td{background-color: snow;}
+tr:hover {background-color: lightskyblue;}
