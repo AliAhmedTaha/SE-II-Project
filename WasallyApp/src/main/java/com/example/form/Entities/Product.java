@@ -2,27 +2,19 @@ package com.example.form.Entities;
 
 
 import java.util.Set;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO)
 	private String name;
 	private String Category;
-	private String Brand;
 	private double HighPrice;
 	private double LowPrice;
 	private String Type;
-	@ManyToOne 
-	@JoinColumn(name= "Brand_name")
-	private Brand brand;
 	
 	
 	@OneToMany (mappedBy ="product" )
@@ -34,11 +26,9 @@ public class Product {
 		
 	}
 	
-	public Product(String name, String brand, String type, int price, int lowprice,
-			int highprice) {
+	public Product(String name, String type, int price, int lowprice,int highprice) {
 		super();
 		this.name = name;
-		Brand = brand;
 		Type = type;
 		this.LowPrice = lowprice;
 		this.HighPrice = highprice;
@@ -61,13 +51,6 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getBrand() {
-		return Brand;
-	}
-
-	public void setBrand(String brand) {
-		Brand = brand;
-	}
 
 	public String getType() {
 		return Type;

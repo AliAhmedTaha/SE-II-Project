@@ -4,17 +4,14 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.OneToMany;
 
 
 @Entity
 public class User {
+	
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO)
 	private String name ;
 	private String Password ;
 	private String Type ;
@@ -24,6 +21,14 @@ public class User {
 	public User() {
 		super();
 	}
+	
+	public User(User user) {
+		super();
+		name=user.getName();
+		Password=user.getPassword();
+		Type=user.getType();
+	}
+	
 	public User(String name, String password, String type) {
 		super();
 		this.name = name;
