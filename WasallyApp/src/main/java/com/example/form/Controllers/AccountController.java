@@ -1,71 +1,68 @@
 package com.example.form.Controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.stereotype.Component;
 
 import com.example.form.Entities.User;
 import com.example.form.Repository.UserRepository;
 
-@Controller
+@Component
 public class AccountController {
 
 	@Autowired
 	UserRepository userRepo;
 	
-
-	@GetMapping("/index")
-    public String SigninForm() {return "index";}
+	public AccountController() { }
 	
-    @PostMapping("/index")
-    public String Signin(@RequestParam String name,@RequestParam String password) 
-    {
-        try
-        {     
-        	User acc=userRepo.findOne(name);
-        	System.out.println(acc.getName()+"   "+acc.getPassword()+"  "+acc.getType());
-        	if(acc.getPassword().equals(password)) 
-        	{
-        		switch(acc.getType()) 
-        		{
-        			case "admin":
-        				return"AdminHomePage";
-        			default:
-        				return"notYet";
-        		
-        		}
+	public String validateUser(String userName, String password, HttpServletRequest request)
+	{
+		try
+        {        	
+			User userAccount=userRepo.findById(userName).get();
+        	System.out.println(userAccount.getName()+"   "+userAccount.getPassword()+"  "+userAccount.getType());
+        	if(userAccount.getPassword().equals(password)) 
+        	{	
+    			request.getSession().setAttribute("user", userAccount);
+    			return userAccount.getType();
         	}
-        }
-        catch(NullPointerException e)
+        	else {return "WrongPassword";}
+        }       
+        catch (Exception e) 
         {
-        	System.out.println("not found");
-        	return "index";
-        }  
-        return "index";
-    }
-    
-    
-    @GetMapping("/signup")
-    public String SignupForm() {return "signup";}
+        	System.out.println("UserNotFound");
+        	return "UserNotFound";
+		}
+	}
 	
-    @PostMapping("/signup")
-    public String Signup(@RequestParam String username,@RequestParam String pass1,@RequestParam String pass2,@RequestParam String type) 
-    {
-        if(userRepo.exists(username)) 
+	public boolean createUser(String userName, String password, String type) 
+	{
+		try 
         {
-        	System.out.println("UserName Already Exists"+"\n");
-    		return "signup";
+        	userRepo.save(new User(userName,password,type));
+        	return true;
         }
-        if(!(pass1.equals(pass2))) 
+        catch(Exception ex)
         {
-        	System.out.println("Password is not the same"+"\n");
-    		return "signup";
+        	System.out.println(ex);
+        	return false;
         }
-    	userRepo.save(new User(username,pass1,type));
-        return "index";
-    }
-    
-    
+	}
+	
+	public User getSessionUser(HttpServletRequest request) 
+	{
+		try 
+    	{
+    		User user=new User((User) request.getSession().getAttribute("user"));
+    	    return user;
+  
+    	}
+    	catch(Exception e)
+    	{
+    		System.out.println("from getSessionUser : "+e);
+    		return null;
+    	}
+	}
+
 }
