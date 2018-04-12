@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Pending Stores Approval</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+
+	<div class="StoresApproval">
+
+        <form method="POST" th:action="@{/StoresApproval}" action="#">
+
+            <table class="StoresApprovalTable" border="2">
+                <tr>
+                    <th>StoreOwnerName</th>
+                    <th>StoreName</th>
+                    <th>Address</th>
+                    <th>Location</th>
+                    <th>Approve</th>
+                </tr>
+                <tr th:each="store  : ${stores}">
+                    <td th:text="${store.user.name}">UserName</td>
+                    <td th:text="${store.Storename}">StoreName</td>
+                    <td th:text="${store.Address}">Address</td>
+                    <td th:text="${store.Type}">Type</td>
+                    <td><input type="checkbox" name="check" th:value="${store.Storename}"/></td>
+                </tr>
+              </table>
+              <br/>
+              <input class="myButton" type="submit" value="Submit"/>
+    
+        </form>
+
+    </div>
+
+</body>
+</html>
