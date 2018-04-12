@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>product Statistics</title>
+	<meta http-equiv="refresh" content="30; http://localhost:8080/ViewStatistics" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+  
+    <div class="Statistics">
+        <h1 class="h1">Product Statistics</h1>
+        
+        <P class="h11">highest Ptoduct Sold:
+            <p class="h11" th:text="| ${higstProductName}|"></p> 
+        </P>
+
+        <P class="h11">Its Sold Quantity:
+            <p  class="h11" th:text="| ${higstProductValue}|"></p>
+        </P>
+
+        <P class="h11">lowest Ptoduct Sold:
+            <p class="h11" th:text="| ${lowestProductName}|"></p>
+            <p th:text="| ${lowestProductValue}|"></p>
+        </P>
+    </div>
+
+</body>
+</html>
