@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Statistics</title>
+	<meta http-equiv="refresh" content="30; http://localhost:8080/ViewStatistics" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+  
+    <div class="ViewStatistics">
+        <h1 class="h1">Store Statistics</h1>
+        
+        <P class="h11">Number of views:
+            <p class="h11" th:text="| ${value1}|"></p> 
+        </P>
+
+        <P class="h11">Number of buied products:
+            <p  class="h11" th:text="| ${value2}|"></p>
+        </P>
+
+        <P class="h11">Sold out products:
+            <p class="h11" th:text="| ${value3}|"></p>
+            <p th:text="| ${value4}|"></p>
+        </P>
+    </div>
+
+</body>
+</html>

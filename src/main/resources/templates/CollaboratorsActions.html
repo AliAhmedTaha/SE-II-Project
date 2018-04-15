@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Collaborators Actions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+
+	<div class="StoresApproval">
+
+        <form method="POST" th:action="@{/CollaboratorsActions}" action="#">
+
+            <table class="StoresApprovalTable" border="2">
+               
+                <tr>
+                    <th>Collaborator Name</th>
+                    <th>Store Name</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:each="Coll  : ${Collaborators}">
+                    <td th:text="${Coll.user.name}">CollaboratorName</td>
+                    <td th:text="${Coll.Storename}">StoreName</td>
+                    <td th:text="${Coll.Action}">Action</td>
+                </tr>
+              </table>
+              <br/>
+              <input class="myButton" type="submit" value="Undo"/>
+    
+        </form>
+
+    </div>
+
+</body>
+</html>
