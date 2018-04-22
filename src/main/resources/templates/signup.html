@@ -6,7 +6,19 @@
     <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
 </head>
 
-<body class="body">
+<body class="body_abdo">
+
+    <header>
+        <div id="Logo">
+            Wasally
+        </div>
+        <ul>
+            <li>
+                    <a th:href="index">Log In</a>
+            </li>
+        </ul>
+    </header>
+
     <div class="signup">
         <h1 class="h1">Sign Up</h1>
         <form method="post" action="#" th:action="@{/signup}" th:object="${signup}" >
@@ -22,7 +34,7 @@
                 </option>
             </select>
             <input type="submit" class="myButton" value="Sign Up"/>
-            <a class="a" th:href="index">I have an account</a>
+            
         </form>
     </div>
 </body>
