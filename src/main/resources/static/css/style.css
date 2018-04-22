@@ -1,4 +1,63 @@
 
+header
+{
+	background-color:lightblue;
+	display:inline-block;
+	width:97%;
+	height:44px;
+	border-radius:0px 90px 90px 0px;
+	margin-left:0px;
+	opacity:0.95;
+	
+	
+}
+
+header #Logo
+{
+	background:wheat;
+	text-align:center;
+	font-family:sans-serif;
+	float:left;
+	color:springgreen;
+	font-weight:bolder;
+	font-size: 30px;
+	
+	padding-right:40px;
+	padding-left:10px;
+	margin-top:4px;
+	margin-left:0px;
+}
+
+header ul
+{
+	list-style-type:none;
+	float:right;
+	margin-right:10px;
+	margin-top:7px;
+}
+
+header ul li
+{
+	
+	border-radius:90px;
+	background:green;
+	padding:5px;
+	padding-right:10px;
+	padding-left:10px;
+}
+
+header ul li a
+{  
+  color: snow
+  ;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+
+
+
 .myButton {
 	background-image: url(btn.jpg);
 	background-size: cover;
@@ -27,12 +86,26 @@
 }
 
 
+body,html{height: 100%;}
+
+.body_abdo { 
+	background-image:url(/images/unsplash.jpg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	height:100%;
+	margin: 0;
+	font-family: cursive;
+	}
 
 .body { 
 	background-image:url(/images/wall.jpg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 	height:100%;
+	margin: 0;
 	font-family: cursive;
-	background-size: cover;
 	}
 
 .signup { 
