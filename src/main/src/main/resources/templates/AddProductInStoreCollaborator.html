@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+        <div class="AddProductStoreOwner">
+            <h1 class="h1">Add Product Information</h1>
+            <form method="post" th:action="@{/AddProductInStoreCollaborator}" action="#" th:object="${AddProductInStoreCollaborator}">
+                
+		        <select class="select" name="product" > 
+                    <option th:each="p : ${Products}" >
+                        <p class="p" th:text="${p.name}"></p>
+                    </option>
+                </select>
+                
+                <select class="select" name="brand" > 
+			        <option th:each="brand : ${Brands}" >
+                        <p class="p" th:text="${brand.name}"></p>
+                    </option>
+                </select>
+                
+
+                <input type="text" class="input" name="price" placeholder="Product Price" required="required" />
+                <input type="text" class="input" name="quan" placeholder="Product Quantity" required="required" />
+
+                <input type="submit" class="myButton" value="Add Product" />
+            </form>
+        </div>
+</body>
+</html>
