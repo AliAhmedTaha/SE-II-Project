@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Stores</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+    <div class="Stores">
+        <form method="post" action="#" th:action="@{/AddCollaborators}" th:object="${AddCollaborators}" >
+            <h1 class="h1">Add Collaborators</h1>
+        <select class="select" name="StoreOwnerName">
+            <option th:each="Owner  : ${StoreOwners}">
+             <p class="p" th:text="${Owner.name}"></p>
+            </option>
+        </select> 
+        <br></br>
+            <input type="submit" class="myButton" value="Add"/>
+        </form>
+    </div>
+</body>
+</html>

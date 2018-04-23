@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Details</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+</head>
+
+<body class="body">
+
+    <div class="MakeOrder">
+
+            <form method="POST" th:action="@{/OrderDetails}" >
+        
+                <h2>Order Information</h2>
+    
+                <input class="input" type="text" name="quantity" placeholder="Product Quantity" required="required" />
+                <input class="input" type="text" name="address" placeholder="Delivery Address" required="required" />
+                
+                <input type="hidden" name="productName" th:value="${product}" />
+                <input type="hidden" name="storeName" th:value="${store}" />
+    
+                <p class="LogInError" th:if="${notAvail}" >Quantity is not available</p>
+    
+                <input class="myButton" type="submit"  value="submit order" />
+            
+            </form>
+    
+
+    </div>
+</body>
+
+</html>
+

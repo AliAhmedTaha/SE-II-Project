@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Collaborators Actions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="src/main/resources/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    
+</head>
+
+<body class="body">
+
+	<div class="StoresApproval">
+
+        <form method="POST" th:action="@{/CollaboratorsActions}" action="#">
+
+            <table class="StoresApprovalTable" border="2">
+               
+                <tr>
+                    <th>Product Name</th>
+                    <th>Action type</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr th:each="Coll  : ${Collaborators}">
+                    <td th:text="${Coll.getProductID()}">CollaboratorName</td>
+                    <td th:text="${Coll.getType()}">StoreName</td>
+                    <td th:text="${Coll.getPrice()}">Action</td>
+                    <td th:text="${Coll.getQuantity()}">Action</td>
+                    <td><input type="radio" name="check" th:value="${Coll.getProductID()}"/></td>
+                </tr>
+              </table>
+              <br/>
+              <input class="myButton" type="submit" value="Undo"/>
+    
+        </form>
+
+    </div>
+
+</body>
+</html>
